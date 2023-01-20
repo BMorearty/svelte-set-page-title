@@ -1,7 +1,7 @@
 <script lang="ts">
   import { getContext } from 'svelte';
 
-  getContext('headline').set('This is the headline');
+  getContext('title').set('This is the title');
 </script>
 
 I'm in the page.

@@ -2,16 +2,16 @@
   import { setContext } from 'svelte';
   import { writable } from 'svelte/store';
 
-  let headline = setContext('headline', writable<string | undefined>(undefined));
+  let title = setContext('title', writable<string | undefined>(undefined));
 </script>
 
 <svelte:head>
-  <title>{$headline ? `${$headline} - ` : ''}Course Store</title>
+  <title>{$title ? `${$title} - ` : ''}Course Store</title>
 </svelte:head>
 
-{#if $headline}
+{#if $title}
   <header>
-    <h1>{$headline}</h1>
+    <h1>{$title}</h1>
   </header>
 {/if}
 
