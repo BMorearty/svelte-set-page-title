@@ -1,41 +1,10 @@
-# create-svelte
+# svelte-set-page-headline
 
-Everything you need to build a Svelte project, powered by
-[`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Demonstrates how a page can pass data like a page headline back up to the layout.
 
-## Creating a project
+- `main` branch: the correct solution, which returns a headline from the page's `load` function
+  (which is called before any rendering happens, including layout rendering).
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or
-`yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for
-> your target environment.
+- `flash` branch: an incorrect solution that uses a writable store to let the page set the headline
+  and have the layout get it. This solution renders the correct result in the end, but results in a
+  client-side flash because the ssr page does not have a headline but the csr page inserts one.
