@@ -1,16 +1,16 @@
 <script lang="ts">
   import { page } from '$app/stores';
 
-  const headline = $page.data.headline;
+  const title = $page.data.title;
 </script>
 
 <svelte:head>
-  <title>{headline ? `${headline} - ` : ''}Course Store</title>
+  <title>{title ? `${title} - ` : ''}Course Store</title>
 </svelte:head>
 
-{#if headline}
+{#if title}
   <header>
-    <h1>{headline}</h1>
+    <h1>{title}</h1>
   </header>
 {/if}
 
